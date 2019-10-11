@@ -4,7 +4,7 @@ namespace onefasteuro\ShopifyUtils;
 
 class ShopifyUtils
 {
-    
+
     const URL_AUTHORIZE = 'https://%s.myshopify.com/admin/oauth/authorize?client_id=%s&scope=%s&state=%s&redirect_uri=%s';
     const URL_FOR_TOKEN = 'https://%s/admin/oauth/access_token';
 
@@ -30,4 +30,20 @@ class ShopifyUtils
         $id = (int) $id;
         return sprintf('gid://shopify/%s/%d', $namespace, $id);
     }
+
+    public static function formatDomain($domain, $protocol = false)
+    {
+        $domain = trim($domain);
+        $domain = rtrim($domain, '/');
+
+        $domain = str_replace(['http://', 'https://'], '', $domain);
+
+        if(!preg_match('/\.myshopify\.com/', $domain)) {
+            $domain = sprintf('%s.myshopify.com', $domain);
+        }
+
+        return ($protocol === false) ? $domain : sprintf('https://%s', $domain);
+    }
+
+
 }
