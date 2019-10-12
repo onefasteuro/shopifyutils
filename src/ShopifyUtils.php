@@ -46,7 +46,9 @@ class ShopifyUtils
     }
 
 
-    public function formaatOauthUrl($shop_prefix, $client_id, $scope, $state, $return_url)
+
+
+    public function getOAuthUrl($shop_prefix, $client_id, $scope, $state, $return_url)
     {
         return sprintf(static::URL_AUTHORIZE, $shop_prefix, $client_id, $scope, $state, $return_url);
 
