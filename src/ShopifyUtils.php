@@ -5,8 +5,7 @@ namespace onefasteuro\ShopifyUtils;
 class ShopifyUtils
 {
 
-    const URL_AUTHORIZE = 'https://%s.myshopify.com/admin/oauth/authorize?client_id=%s&scope=%s&state=%s&redirect_uri=%s';
-    const URL_FOR_TOKEN = 'https://%s/admin/oauth/access_token';
+
 
 
     /**
