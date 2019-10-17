@@ -10,9 +10,10 @@ class ShopifyUtils
 	 * @param $name
 	 * @return mixed
 	 */
-	public static function getDomainShopName($name)
+	public static function getHandleFromDomain($name)
 	{
-		return str_replace(['http://', 'https://', '.myshopify.com', '.myshopify.com/'], '', $name);
+		$name = str_replace(['http://', 'https://', '.myshopify.com', '.myshopify.com/'], '', $name);
+		return trim($name);
 	}
 
     /**
