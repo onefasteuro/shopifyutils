@@ -4,9 +4,16 @@ namespace onefasteuro\ShopifyUtils;
 
 class ShopifyUtils
 {
-
-
-
+	
+	/**
+	 * Parse a domain name into shop name
+	 * @param $name
+	 * @return mixed
+	 */
+	public static function getDomainShopName($name)
+	{
+		return str_replace(['http://', 'https://', '.myshopify.com', '.myshopify.com/'], '', $name);
+	}
 
     /**
      * Parses a GID and returns an id
