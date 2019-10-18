@@ -13,7 +13,10 @@ class ShopifyUtils
 	public static function getHandleFromDomain($name)
 	{
 		$name = str_replace(['http://', 'https://', '.myshopify.com', '.myshopify.com/'], '', $name);
-		return trim($name);
+		$name = trim($name);
+		preg_match('/.+?(?=\/)/', $name, $matches);
+		
+		return (count($matches) > 0) ? $matches[0] : null;
 	}
 
     /**
