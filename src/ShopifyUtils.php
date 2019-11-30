@@ -37,8 +37,7 @@ class ShopifyUtils
      */
     public static function gidRestore($id, $namespace)
     {
-	if(!preg_match('/gid\:/', $id)) {
-		$id = (int) $id;
+	if(!preg_match('/gid/', $id)) {
 		return sprintf('gid://shopify/%s/%d', $namespace, $id);
 	}
 	else {
